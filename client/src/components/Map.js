@@ -4,6 +4,7 @@ import { Icon } from "leaflet";
 import * as parkData from "../data/skateboard-parks.json";
 import 'leaflet/dist/leaflet.css';
 import Questions from './Questions'
+let coordinates = [51.025, -114.1]
 
 export const icon = new Icon({
   iconUrl: "/star.png",
@@ -15,7 +16,7 @@ const Map = () => {
   return ( 
     <div>
       <h1>Our Beautiful Map</h1>
-      <MapContainer  id="mapid" center={[51.025, -114.1]} zoom={10}>
+      <MapContainer  id="mapid" center={coordinates} zoom={10}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

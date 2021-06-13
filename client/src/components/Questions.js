@@ -1,6 +1,6 @@
 const Questions = () => {
 
-    const Questions=[
+    const QuestionsArray=[
         {
             number: 1,
             question: "What is this City?",
@@ -17,13 +17,29 @@ const Questions = () => {
         }
     ]
 
+
+    const randomNumber = Math.floor(Math.random() * Questions.length)
+
     return (
         <div>
-            <h1>{Questions[0].question}</h1>
+            <h1>{QuestionsArray[randomNumber].question}</h1>
             <ul>
                 {
-                    Questions[0].options.map((option, index)=>{
-                       return <li key={index}>{option}</li>
+                    QuestionsArray[0].options.map((option, index)=>{
+                        const checkAnswer = () => {
+                            // alert(QuestionsArray[randomNumber].options[index])
+                            let chosenAnswer = QuestionsArray[randomNumber].options[index]
+                            if (chosenAnswer === QuestionsArray[randomNumber].options[0]) {
+                                alert("Correct answer! (" + chosenAnswer + ")")
+                            }
+                            else if (chosenAnswer === QuestionsArray[randomNumber].options[1]) {
+                                alert("Incorrect answer! (" + chosenAnswer + ")")
+                            }
+                            if (chosenAnswer === QuestionsArray[randomNumber].options[2]) {
+                                alert("Incorrect answer! (" + chosenAnswer + ")")
+                            }
+                          }
+                       return <li key={index}><button onClick={checkAnswer}>{option}</button></li>
                     })
                 }
             </ul>
