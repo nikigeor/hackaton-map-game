@@ -3,7 +3,7 @@ import "./App.css";
 import Map from "./components/Map"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Welcome from "./components/Welcome"
-import GameOne from './components/Game1'
+import GameOne from './components//Game1/Game1'
 import GameTwo from './components/Game2'
 
 function App() {
