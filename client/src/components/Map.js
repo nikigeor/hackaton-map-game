@@ -3,6 +3,7 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
 import * as parkData from "../data/skateboard-parks.json";
 import 'leaflet/dist/leaflet.css';
+import Questions from './Questions'
 
 export const icon = new Icon({
   iconUrl: "/star.png",
@@ -32,11 +33,13 @@ const Map = () => {
             }}
             icon={icon}
             >
-            <Popup>{park.properties.NAME}</Popup>
+            <Popup>{park.properties.NAME}<Questions/></Popup>
           </Marker>
         ))}
 
-        {activePark && (
+       
+
+        {/* {activePark && (
           <Popup
             position={[
               activePark.geometry.coordinates[1],
@@ -51,7 +54,7 @@ const Map = () => {
               <p>{activePark.properties.DESCRIPTIO}</p>
             </div>
           </Popup>
-        )}
+        )} */}
 
       </MapContainer>
     </div>

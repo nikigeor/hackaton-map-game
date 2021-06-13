@@ -1,7 +1,114 @@
+import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
+import './Game2.css'
+
 const GameTwo = () => {
+    const playerScore= useRef(0)
+    const computerScore= useRef(0)
+    // const [playerScore, setPlayerScore]= useState(0)
+    // const [computerScore, setComputerScore]=useState(0)
+    const [playerChoice, setPlayerChoice] = useState('')
+    const [computerChoice, setComputerChoice] = useState('')
+    const [result, setResult]= useState()
+    const [chances, setChances]= useState(3)
+    
+    let choices = ['Rock', 'Paper', 'Scissors']
+
+    const handleClick = (value)=>{   
+        setPlayerChoice(value)
+        compChoice()
+
+        let chance= chances -1
+        setChances(chance)
+
+        if(chances === 0){
+            if(playerScore > computerScore){
+                setResult("YOU WON!")
+                console.log('result win:',result)
+            }else if(playerScore < computerScore){
+               setResult('YOU LOST AGAIN!')
+               console.log('result lose:',result)
+            }else if(playerScore === computerScore){
+               setResult('ITS A TIE!')
+               console.log('result tie:',result)
+            }
+        }  
+    }
+    // useEffect(()=>{
+    //     handleClick()
+    // },[])
+
+
+    const compChoice = ()=>{
+        let randChoice = choices[Math.floor(Math.random()* choices.length)]
+        setComputerChoice(randChoice)
+    }
+
+    
+    useEffect(()=>{
+        // let pCount = 0 
+        // let cCount = 0
+            switch (playerChoice + computerChoice) {
+                case 'ScissorsPaper':
+                case 'RockScissors':
+                case 'PaperRock':   
+                    playerScore.current = playerScore.current + 1
+                    // pCount = pCount+1
+                    // setPlayerScore(pCount)
+                    break
+                case 'PaperScissors':
+                case 'ScissorsRock':
+                case 'RockPaper':  
+                    computerScore.current = computerScore.current+1
+                    // cCount= cCount+1
+                    // setComputerScore(cCount)
+                    break
+                // case 'RockRock':
+                // case 'PaperPaper':
+                // case 'ScissorsScissors':     
+                //   break
+                 default:
+                    
+            } 
+   }, [computerChoice, playerChoice, playerScore, computerScore])
+    
+
     return (
-        <div>
-            <h1>Game2 goes here...</h1>
+        <div className="game-container">
+            <h1>Rock Paper Scissors</h1>
+            <p className="chances-tag">You have <span className='chances'>{chances} </span>chances!!</p>
+            <div className="score">
+                <p>Player: <span className='score-num'>{playerScore.current}</span></p>
+                <p>Computer: <span className='score-num'>{computerScore.current}</span></p>
+
+                {/* <p>Player: {playerScore}</p>
+                <p>Computer: {computerScore}</p> */}
+            </div>
+            {
+                chances===0 ? (<div className="done">
+                                    <p>{result}</p>
+                                    <Link to='/map'><button>Next Question</button></Link> 
+                                    <Link to='/welcome'><button>Quit</button></Link>
+                                </div>
+                            ):(
+                                <div className="select">
+                                    <h2>Make your Selection</h2>
+                                    {
+                                        choices.map((choice, index) => <button key={index} 
+                                        onClick={()=>handleClick(choice)}>{choice}</button>
+                                        )
+                                    }
+                                    <div className="choices">
+                                        <div>  
+                                            <h4>You Picked:<span className="choice">{playerChoice}</span></h4>
+                                        </div>
+                                        <div>
+                                            <h4>Computer Picked:<span className="choice">{computerChoice}</span></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+            }
         </div>
     );
 }

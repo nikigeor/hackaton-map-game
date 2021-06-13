@@ -1,0 +1,47 @@
+.game-container{
+    margin:auto;
+    text-align: center;
+    font-size: larger;
+}
+
+.score{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size:1.2rem;
+}
+
+.score .score-num{
+    color:darkblue;
+    font-weight: bold;
+}
+.select{
+    align-items: center;
+}
+.choices{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr); 
+}
+
+.choice{
+    margin-right: 10px;
+    color: brown;
+}
+
+.chances-tag{
+    background-color: darkgray;
+}
+.chances{
+    color: brown;
+    font-weight: bold;
+}
+
+.select button, .done button{
+    margin-right: 10px;
+    background-color: darkblue;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    font-size: larger;
+}
+
