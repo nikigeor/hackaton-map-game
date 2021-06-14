@@ -5,12 +5,13 @@ import './Game2.css'
 const GameTwo = () => {
     const playerScore= useRef(0)
     const computerScore= useRef(0)
-    // const [playerScore, setPlayerScore]= useState(0)
-    // const [computerScore, setComputerScore]=useState(0)
+    //const [playerScore, setPlayerScore]= useState(0)
+    //const [computerScore, setComputerScore]=useState(0)
     const [playerChoice, setPlayerChoice] = useState('')
     const [computerChoice, setComputerChoice] = useState('')
     const [result, setResult]= useState()
     const [chances, setChances]= useState(3)
+    //const [winner, setWinner]=useState()
     
     let choices = ['Rock', 'Paper', 'Scissors']
 
@@ -20,7 +21,7 @@ const GameTwo = () => {
 
         let chance= chances -1
         setChances(chance)
-       
+
         if(chance === 0){
             if(playerScore.current > computerScore.current){
                 setResult("YOU WON!")
@@ -34,9 +35,6 @@ const GameTwo = () => {
             }
         }  
     }
-    useEffect(()=>{
-        handleClick()
-    },[playerScore.current, computerScore.current])
 
 
     const compChoice = ()=>{
@@ -53,24 +51,21 @@ const GameTwo = () => {
                 case 'RockScissors':
                 case 'PaperRock':   
                     playerScore.current = playerScore.current + 1
-                    // pCount = pCount+1
-                    // setPlayerScore(pCount)
+                    //setWinner('player')
                     break
                 case 'PaperScissors':
                 case 'ScissorsRock':
                 case 'RockPaper':  
                     computerScore.current = computerScore.current+1
-                    // cCount= cCount+1
-                    // setComputerScore(cCount)
+                    //setWinner('computer')
                     break
                 // case 'RockRock':
                 // case 'PaperPaper':
                 // case 'ScissorsScissors':     
                 //   break
                  default:
-                    
             } 
-   }, [computerChoice, playerChoice, playerScore, computerScore])
+   }, [computerChoice, playerChoice])
     
 
     return (

@@ -18,6 +18,10 @@
 .select{
     align-items: center;
 }
+.select button:hover{
+    background-color: #ff69b4;
+}
+
 .choices{
     display:grid;
     grid-template-columns: repeat(2, 1fr); 
