@@ -24,3 +24,22 @@ body {
   width: 100%;
   position: absolute;
 }
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.linky-button {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.linky-button:hover {
+  background-color: #ff69b4;
+}

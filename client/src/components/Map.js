@@ -4,6 +4,7 @@ import { Icon } from "leaflet";
 import * as parkData from "../data/skateboard-parks.json";
 import 'leaflet/dist/leaflet.css';
 import Questions from './Questions'
+import { Link } from "react-router-dom"
 let coordinates = [51.025, -114.1]
 
 export const icon = new Icon({
@@ -56,6 +57,11 @@ const Map = () => {
         )} */}
 
       </MapContainer>
+      <div className="buttons">
+        <Link className="linky-button" to="/game1">Game 1</Link>
+        <Link className="linky-button" to="/game2">Game 2</Link>
+        <Link className="linky-button" to="/ending">Ending</Link>
+      </div>
     </div>
   );
 }
