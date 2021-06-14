@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "60c75d704a2b1190ec0d80e3"
+  },
+  "city_name": "Calgary Tower",
+  "question": "What city is this?",
+  "options": [
+    "Calgary",
+    "New York",
+    "Edmonton"
+  ],
+  "coordinates": [
+    -114,
+    51
+  ]
+},{
+  "_id": {
+    "$oid": "60c760384a2b1190ec0d80e4"
+  },
+  "city_name": "West Edmonton Mall",
+  "question": "What's the biggest mall in the city?",
+  "options": [
+    "Cross Iron Mills",
+    "West Edmonton Mall",
+    "Chinook Mall"
+  ],
+  "coordinates": [
+    -113,
+    53
+  ]
+},{
+  "_id": {
+    "$oid": "60c7618c4a2b1190ec0d80e5"
+  },
+  "city_name": "Pinto MacBean",
+  "question": "What kind of bean is this?",
+  "options": [
+    "Pinto",
+    "Fava",
+    "Kidney"
+  ],
+  "coordinates": [
+    -111,
+    {
+      "$numberDecimal": "49.867"
+    }
+  ]
+}]
