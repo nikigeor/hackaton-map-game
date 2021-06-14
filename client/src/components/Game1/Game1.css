@@ -27,6 +27,7 @@ div#game {
 
 .winning-text {
   font-size: 60px;
+  color: #ffa500;
   animation: bounce 2s ease-in-out infinite;
 }
 
