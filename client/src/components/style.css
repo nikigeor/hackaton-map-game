@@ -25,6 +25,21 @@ body {
   position: absolute;
 }
 
+.question {
+  font-weight: bold;
+}
+
+.questions ul {
+  justify-content: center;
+  padding: 0px;
+}
+
+.questions li {
+  list-style: none;
+  text-align: center;
+  margin: 2px;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
