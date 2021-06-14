@@ -19,7 +19,7 @@ const GameOne = () => {
     if(!winner) {
       // 
     } else {
-      setWinningText(winner + ' won!')
+      setWinningText(winner + ' Won!')
     }
   }
 
@@ -64,7 +64,9 @@ const GameOne = () => {
   return (
     <div id="game">
       <h1>Tic-Tac-Toe</h1>
-      {winningText}
+      <div className="winning-text">
+        {winningText}
+      </div>
       <div className="row">
         <Game1Box row={0} col={0} currentState={turn} changeTurn={changeTurn} />
         <Game1Box row={0} col={1} currentState={turn} changeTurn={changeTurn} />
