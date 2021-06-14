@@ -20,23 +20,23 @@ const GameTwo = () => {
 
         let chance= chances -1
         setChances(chance)
-
-        if(chances === 0){
-            if(playerScore > computerScore){
+       
+        if(chance === 0){
+            if(playerScore.current > computerScore.current){
                 setResult("YOU WON!")
-                console.log('result win:',result)
-            }else if(playerScore < computerScore){
+              
+            }else if(playerScore.current < computerScore.current){
                setResult('YOU LOST AGAIN!')
-               console.log('result lose:',result)
-            }else if(playerScore === computerScore){
+               
+            }else if(playerScore.current === computerScore.current){
                setResult('ITS A TIE!')
-               console.log('result tie:',result)
+              
             }
         }  
     }
-    // useEffect(()=>{
-    //     handleClick()
-    // },[])
+    useEffect(()=>{
+        handleClick()
+    },[playerScore.current, computerScore.current])
 
 
     const compChoice = ()=>{
@@ -85,7 +85,7 @@ const GameTwo = () => {
                 <p>Computer: {computerScore}</p> */}
             </div>
             {
-                chances===0 ? (<div className="done">
+                chances===0? (<div className="done">
                                     <p>{result}</p>
                                     <Link to='/map'><button>Next Question</button></Link> 
                                     <Link to='/welcome'><button>Quit</button></Link>
