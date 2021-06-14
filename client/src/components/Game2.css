@@ -11,7 +11,7 @@
 }
 
 .score .score-num{
-    color:darkblue;
+    color:burlywood;
     font-weight: bold;
 }
 .select{
@@ -23,12 +23,14 @@
 }
 
 .choice{
-    margin-right: 10px;
-    color: brown;
+    margin-left: 10px;
+    color:darkkhaki;
+    
 }
 
 .chances-tag{
-    background-color: darkgray;
+    background-color: white;
+    color: black;
 }
 .chances{
     color: brown;
@@ -37,8 +39,8 @@
 
 .select button, .done button{
     margin-right: 10px;
-    background-color: darkblue;
-    color: white;
+    background-color: white;
+    color: darkblue;
     font-weight: bold;
     border-radius: 6px;
     border: none;
