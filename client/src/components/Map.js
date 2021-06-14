@@ -15,7 +15,8 @@ const Map = () => {
   const [activePark, setActivePark] = React.useState(null);
   return ( 
     <div>
-      <h1>Our Beautiful Map</h1>
+      <h1>Start Your Hack-A-Thon Here</h1>
+    
       <MapContainer  id="mapid" center={coordinates} zoom={10}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -37,9 +38,6 @@ const Map = () => {
             <Popup>{park.city_name}<Questions/></Popup>
           </Marker>
         ))}
-
-       
-
         {/* {activePark && (
           <Popup
             position={[
@@ -59,7 +57,7 @@ const Map = () => {
 
       </MapContainer>
     </div>
-   );
+  );
 }
- 
+
 export default Map;
