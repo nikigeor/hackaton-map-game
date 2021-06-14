@@ -22,19 +22,19 @@ const Map = () => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
 
-        {parkData.features.map(park => (
+        {parkData.cities.map(park => (
           <Marker
-            key={park.properties.PARK_ID}
+            key={park.city_ID}
             position={[
-              park.geometry.coordinates[1],
-              park.geometry.coordinates[0]
+              park.coordinates[1],
+              park.coordinates[0]
             ]}
             onClick={() => {
               setActivePark(park);
             }}
             icon={icon}
             >
-            <Popup>{park.properties.NAME}<Questions/></Popup>
+            <Popup>{park.city_name}<Questions/></Popup>
           </Marker>
         ))}
 
@@ -43,8 +43,8 @@ const Map = () => {
         {/* {activePark && (
           <Popup
             position={[
-              activePark.geometry.coordinates[1],
-              activePark.geometry.coordinates[0]
+              activePark.coordinates[1],
+              activePark.coordinates[0]
             ]}
             onClose={() => {
               setActivePark(null);
