@@ -16,13 +16,17 @@ const Questions = () => {
                         const checkAnswer = () => {
                             let chosenAnswer = parkData.cities[index].options[index]
                             if (chosenAnswer === parkData.cities[index].options[0]) {
-                                alert("Correct answer! :)")
+                                alert("Correct answer! :)  Please continue.")
                             }
                             else if (chosenAnswer === parkData.cities[index].options[1]) {
-                                alert("Incorrect answer! :(")
+                                if (window.confirm("Incorrect answer! :(  Click to proceed.")) {
+                                    window.location.href='/game1'
+                                }
                             }
                             if (chosenAnswer === parkData.cities[index].options[2]) {
-                                alert("Incorrect answer! :(")
+                                if (window.confirm("Incorrect answer! :(  Click to proceed.")) {
+                                    window.location.href='/game2'
+                                }
                             }
                         }
                         return <li key={index}><button onClick={checkAnswer}>{option}</button></li>
