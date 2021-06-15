@@ -104,6 +104,9 @@ const GameTwo = () => {
                                 </div>
                             )
             }
+            <div className="buttons">
+                <Link style={{marginTop: "100px"}} className="linky-button" to="/map">Back to the map</Link>
+            </div>
         </div>
     );
 }

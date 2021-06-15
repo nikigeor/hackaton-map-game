@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Game1.css"
 import Game1Box from "./Game1Box"
+import { Link } from "react-router-dom"
 const board = [[], [], []]
 
 const GameOne = () => {
@@ -19,7 +20,7 @@ const GameOne = () => {
     if(!winner) {
       // 
     } else {
-      setWinningText(winner + ' Won!')
+      setWinningText(winner + ' wins!!!')
     }
   }
 
@@ -64,9 +65,6 @@ const GameOne = () => {
   return (
     <div id="game">
       <h1>Tic-Tac-Toe</h1>
-      <div className="winning-text">
-        {winningText}
-      </div>
       <div className="row">
         <Game1Box row={0} col={0} currentState={turn} changeTurn={changeTurn} />
         <Game1Box row={0} col={1} currentState={turn} changeTurn={changeTurn} />
@@ -82,14 +80,15 @@ const GameOne = () => {
         <Game1Box row={2} col={1} currentState={turn} changeTurn={changeTurn} />
         <Game1Box row={2} col={2} currentState={turn} changeTurn={changeTurn} />
       </div>
+      <div className="winning-text">
+        {winningText}
+      </div>
+      <div className="buttons">
+        <Link style={{marginTop: "100px"}} className="linky-button" to="/map">Back to the map</Link>
+      </div>
     </div>
 
   )
 }
  
 export default GameOne;
-
-
-// Replay
-// Against computer: User is 'X'; after turn, computer places 'O' in random empty box (vary who starts)
-// Format
