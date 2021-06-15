@@ -19,6 +19,7 @@ div#game {
   width: 100vw;
   justify-content: center;
   align-items: center;
+  margin-top: -70px;
 }
 
 .row {
@@ -33,37 +34,37 @@ div#game {
 
 @keyframes bounce {
   0% {
-    transform: translateY(-1000%);
+    transform: translateY(1000%);
   }
   15% {
     transform: translateY(0%);
   }
   30% {
-    transform: translateY(-50%);
+    transform: translateY(50%);
   }
   40% {
     transform: translateY(0%);
   }
   50% {
-    transform: translateY(-30%);
+    transform: translateY(30%);
   }
   70% {
     transform: translateY(0%);
   }
   80% {
-    transform: translateY(-15%);
+    transform: translateY(15%);
   }
   90% {
     transform: translateY(0%);
   }
   95% {
-    transform: translateY(-7%);
+    transform: translateY(7%);
   }
   97% {
     transform: translateY(0%);
   }
   97% {
-    transform: translateY(-3%);
+    transform: translateY(3%);
   }
   100% {
     transform: translateY(0%);
