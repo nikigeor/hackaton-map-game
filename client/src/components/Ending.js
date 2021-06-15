@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactPlayer from "react-player";
+import { Link } from "react-router-dom"
 import  "./style.css"
 
 function YoutubePlayer() {
@@ -12,7 +13,7 @@ function YoutubePlayer() {
       height={800}
       />
       <h1>Congratulations on winning the Hack-A-Thon Challenge </h1>
-      <h1>Ready to start again? - <a href="http://localhost:3000/map">Click Here</a></h1>
+      <h1>Ready to start again? - <Link to="/map">Click Here</Link></h1>
     </div>
 
     
