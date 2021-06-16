@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from "react-leaflet";
 import { Icon } from "leaflet";
-import * as parkData from "../data/skateboard-parks.json";
+import * as placeData from "../data/places.json";
 import 'leaflet/dist/leaflet.css';
 import Questions from './Questions'
 import { Link } from "react-router-dom"
 
-export const icon = new Icon({
-  iconUrl: "/star.png",
-  iconSize: [25, 25]
-});
+const Map = ({coordinates, index})=>{
+    const [activePlace, setActivePlace] = React.useState(null);
 
 function LocationMarker({location}) {
   const [position, setPosition] = useState(null)
@@ -62,5 +60,7 @@ const Map = () => {
     </div>
   );
 }
+
+   
 
 export default Map;

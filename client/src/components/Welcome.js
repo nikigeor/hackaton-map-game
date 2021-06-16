@@ -13,7 +13,7 @@ function YoutubePlayer() {
       height={800}
       />
       
-      <h1>Start Your Adventure - <Link to="/map">
+      <h1>Start Your Adventure - <Link className="linky-button" to="/map0">
         Click Here</Link></h1>
     </div>
 

@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "./Game1.css"
 import Game1Box from "./Game1Box"
 import { Link } from "react-router-dom"
+
 const board = [[], [], []]
 
-const GameOne = () => {
+const GameOne = ({index}) => {
   const [turn, setTurn] = useState('X')
   const [winningText, setWinningText] = useState('')
 
@@ -84,7 +85,7 @@ const GameOne = () => {
         {winningText}
       </div>
       <div className="buttons">
-        <Link style={{marginTop: "100px"}} className="linky-button" to="/map">Back to the map</Link>
+        <Link style={{marginTop: "100px"}} className="linky-button" to={`/map1`}>Back to the map</Link>
       </div>
     </div>
 

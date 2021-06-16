@@ -42,13 +42,15 @@
     font-weight: bold;
 }
 
-.select button, .done button{
+ .select button{
     margin-right: 10px;
     background-color: white;
-    color: darkblue;
     font-weight: bold;
     border-radius: 6px;
     border: none;
     font-size: larger;
 }
 
+.done p{
+    margin-bottom: 40px;
+}

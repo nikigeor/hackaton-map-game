@@ -82,8 +82,8 @@ const GameTwo = () => {
             {
                 chances===0? (<div className="done">
                                     <p>{result}</p>
-                                    <Link to='/map'><button>Next Question</button></Link> 
-                                    <Link to='/welcome'><button>Quit</button></Link>
+                                    <Link style={{marginTop: "100px"}} className="linky-button" to='/map2'>Next Question</Link> 
+                                    <Link style={{marginTop: "100px"}} className="linky-button" to='/welcome'>Quit</Link>
                                 </div>
                             ):(
                                 <div className="select">
@@ -104,9 +104,6 @@ const GameTwo = () => {
                                 </div>
                             )
             }
-            <div className="buttons">
-                <Link style={{marginTop: "100px"}} className="linky-button" to="/map">Back to the map</Link>
-            </div>
         </div>
     );
 }
