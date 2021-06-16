@@ -7,23 +7,23 @@
   "cities": [
     {
       "city_ID": 0,
-      "city_name": "Calgary Tower",
-      "question": "What is this City?",
-      "options": ["Calgary", "New York", "Paris"],
+      "city_name": "Calgary",
+      "question": "Which two rivers flow through Calgary?",
+      "options": ["Bow and Elbow", "Bow and Oldman", "Bow and North Saskatchewan"],
       "coordinates": [-114.062019, 51.044270]
     },
     {
       "city_ID": 1,
       "city_name": "West Edmonton Mall",
-      "question": "What is this City?",
-      "options": ["Edmonton", "New York", "Paris"],
+      "question": "What Quebec city is Edmonton's sister city?",
+      "options": ["Gatineau", "Montreal", "Victoriaville"],
       "coordinates": [-113.623055, 53.522778]
     },
     {
       "city_ID": 2,
-      "city_name": "Pinto MacBean",
-      "question": "What kind of bean is this?",
-      "options": ["Pinto", "Fava", "Kidney"],
+      "city_name": "Bow Island",
+      "question": "One of the largest roadside attractions in this town:",
+      "options": ["Highway 63", "Highway 2", "Secondary Highway 881"],
       "coordinates": [-111.3666652, 49.8666632]
     }
   ]
