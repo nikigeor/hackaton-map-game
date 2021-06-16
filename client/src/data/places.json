@@ -14,7 +14,7 @@
     },
     {
       "city_ID": 1,
-      "city_name": "West Edmonton Mall",
+      "city_name": "Edmonton",
       "question": "What Quebec city is Edmonton's sister city?",
       "options": ["Gatineau", "Montreal", "Victoriaville"],
       "coordinates": [-113.623055, 53.522778]
@@ -25,6 +25,20 @@
       "question": "One of the largest roadside attractions in this town:",
       "options": ["Highway 63", "Highway 2", "Secondary Highway 881"],
       "coordinates": [-111.3666652, 49.8666632]
+    },
+    {
+      "city_ID": 3,
+      "city_name": "Bratislava",
+      "question": "Which two countries border Bratislava?",
+      "options": ["Austria and Hungary", "Hungary and Slovenia", "Austria and Poland"],
+      "coordinates": [17.107748, 48.148598]
+    },
+    {
+      "city_ID": 4,
+      "city_name": "Panama",
+      "question": "At the country’s narrowest point, only ___ kilometres separates the Atlantic from the Pacific Ocean.",
+      "options": ["80", "120", "45"],
+      "coordinates": [-79.516670, 8.983333]
     }
   ]
 }
