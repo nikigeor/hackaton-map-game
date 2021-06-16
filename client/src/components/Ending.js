@@ -13,7 +13,8 @@ function YoutubePlayer() {
       height={800}
       />
       <h1>Congratulations on winning the Hack-A-Thon Challenge </h1>
-      <h1>Ready to start again? - <Link to="/map">Click Here</Link></h1>
+      <h1>Ready to start again? - <Link className="linky-button" to="/map">Click Here</Link> OR                                     
+      <Link className="linky-button" to='/welcome'>Quit</Link></h1>
     </div>
 
     

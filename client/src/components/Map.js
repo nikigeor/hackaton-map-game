@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from "react-leaflet";
 import { Icon } from "leaflet";
 import * as placeData from "../data/places.json";
 import 'leaflet/dist/leaflet.css';
 import Questions from './Questions'
 import { Link } from "react-router-dom"
+
 const icon = new Icon ({
   iconUrl: "/star.png",
   iconSize: [25, 25]
 })
 
 function LocationMarker({location}) {
-  const [position, setPosition] = useState(null)
+  const [positions, setPositions] = useState(null)
   const map = useMapEvents({
     click(e) {
       map.flyTo(e.latlng, map.getZoom())
@@ -28,6 +29,17 @@ function LocationMarker({location}) {
 const Map = () => {
   const [coordinates, setCoordinates] = React.useState([51.025, -114.1]);
   const [location, setLocation] = React.useState()
+
+
+  // useEffect(()=>{
+  //   const getPlacesDetail = async () =>{
+  //     let response = await fetch('/questions')
+  //     let data = await response.json
+  //     console.log("data:",data)
+  //   }
+  //   getPlacesDetail()
+  // }, [])
+
   return ( 
     <div>
       <h1>Click on a star to begin...</h1>
