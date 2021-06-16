@@ -5,9 +5,10 @@ import * as placeData from "../data/places.json";
 import 'leaflet/dist/leaflet.css';
 import Questions from './Questions'
 import { Link } from "react-router-dom"
-
-const Map = ({coordinates, index})=>{
-    const [activePlace, setActivePlace] = React.useState(null);
+const icon = new Icon ({
+  iconUrl: "/star.png",
+  iconSize: [25, 25]
+})
 
 function LocationMarker({location}) {
   const [position, setPosition] = useState(null)
@@ -25,7 +26,6 @@ function LocationMarker({location}) {
 }
 
 const Map = () => {
-  const [activePark, setActivePark] = React.useState(null);
   const [coordinates, setCoordinates] = React.useState([51.025, -114.1]);
   const [location, setLocation] = React.useState()
   return ( 
@@ -38,7 +38,7 @@ const Map = () => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
 
-        {parkData.cities.map((city, index) => (
+        {placeData.cities.map((city, index) => (
           <Marker
             key={city.city_ID}
             position={[
@@ -47,7 +47,7 @@ const Map = () => {
             ]}
             icon={icon}
             >
-            <Popup>{city.city_name}<Questions city={city} nextCity={parkData.cities[index+1]} setLocation={setLocation}/></Popup>
+            <Popup>{city.city_name}<Questions city={city} nextCity={placeData.cities[index+1]} setLocation={setLocation}/></Popup>
           </Marker>
         ))}
         <LocationMarker location={location}/>
@@ -59,8 +59,6 @@ const Map = () => {
       </div>
     </div>
   );
-}
-
-   
+} 
 
 export default Map;
