@@ -1,22 +1,38 @@
-import React from "react";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import React, { useState } from "react";
+import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from "react-leaflet";
 import { Icon } from "leaflet";
 import * as parkData from "../data/skateboard-parks.json";
 import 'leaflet/dist/leaflet.css';
 import Questions from './Questions'
 import { Link } from "react-router-dom"
-let coordinates = [51.025, -114.1]
 
 export const icon = new Icon({
   iconUrl: "/star.png",
   iconSize: [25, 25]
 });
 
+function LocationMarker({location}) {
+  const [position, setPosition] = useState(null)
+  const map = useMapEvents({
+    click(e) {
+      map.flyTo(e.latlng, map.getZoom())
+      map.setView(e.latlng, 10)
+      console.log(e.latlng)
+    },
+  })
+  React.useEffect(() => {
+    if (location) map.flyTo(location)
+  },[location])
+  return null
+}
+
 const Map = () => {
   const [activePark, setActivePark] = React.useState(null);
+  const [coordinates, setCoordinates] = React.useState([51.025, -114.1]);
+  const [location, setLocation] = React.useState()
   return ( 
     <div>
-      <h1>Start Your Hack-A-Thon Here</h1>
+      <h1>Click on a star to begin...</h1>
     
       <MapContainer  id="mapid" center={coordinates} zoom={10}>
         <TileLayer
@@ -24,38 +40,19 @@ const Map = () => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
 
-        {parkData.cities.map(park => (
+        {parkData.cities.map((city, index) => (
           <Marker
-            key={park.city_ID}
+            key={city.city_ID}
             position={[
-              park.coordinates[1],
-              park.coordinates[0]
+              city.coordinates[1],
+              city.coordinates[0]
             ]}
-            onClick={() => {
-              setActivePark(park);
-            }}
             icon={icon}
             >
-            <Popup>{park.city_name}<Questions/></Popup>
+            <Popup>{city.city_name}<Questions city={city} nextCity={parkData.cities[index+1]} setLocation={setLocation}/></Popup>
           </Marker>
         ))}
-        {/* {activePark && (
-          <Popup
-            position={[
-              activePark.coordinates[1],
-              activePark.coordinates[0]
-            ]}
-            onClose={() => {
-              setActivePark(null);
-            }}
-          >
-            <div>
-              <h2>{activePark.properties.NAME}</h2>
-              <p>{activePark.properties.DESCRIPTIO}</p>
-            </div>
-          </Popup>
-        )} */}
-
+        <LocationMarker location={location}/>
       </MapContainer>
       <div className="buttons">
         <Link className="linky-button" to="/game1">Game 1</Link>

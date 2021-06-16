@@ -1,29 +1,30 @@
-import parkData from '../data/skateboard-parks.json'
 import './style.css'
+let newCoordinates
 
-const Questions = () => {
-
-    // const index = Math.floor(Math.random() * parkData.length)
+const Questions = ({city, nextCity, setLocation}) => {
 
     return (
         <div className="questions">
             <p className="question">
-                {parkData.cities[0].question}
+                {city.question}
             </p>
             <ul>
                 {
-                    parkData.cities[0].options.map((option, index)=>{
+                    city.options.map((option, index)=>{
                         const checkAnswer = () => {
-                            let chosenAnswer = parkData.cities[index].options[index]
-                            if (chosenAnswer === parkData.cities[index].options[0]) {
-                                alert("Correct answer! :)  Please continue.")
+                            let chosenAnswer = city.options[index]
+                            if (chosenAnswer === city.options[0]) {
+                                alert("Correct answer! :)")
+                                if (nextCity) setLocation({lat: nextCity.coordinates[1], lng: nextCity.coordinates[0]})
+                                else window.location.href='/ending'
+                                console.log('newCoordinates', newCoordinates)
                             }
-                            else if (chosenAnswer === parkData.cities[index].options[1]) {
+                            else if (chosenAnswer === city.options[1]) {
                                 if (window.confirm("Incorrect answer! :(  Click to proceed.")) {
                                     window.location.href='/game1'
                                 }
                             }
-                            if (chosenAnswer === parkData.cities[index].options[2]) {
+                            if (chosenAnswer === city.options[2]) {
                                 if (window.confirm("Incorrect answer! :(  Click to proceed.")) {
                                     window.location.href='/game2'
                                 }
@@ -38,3 +39,4 @@ const Questions = () => {
 }
  
 export default Questions;
+export { newCoordinates }
