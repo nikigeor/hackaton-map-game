@@ -85,7 +85,7 @@ const GameOne = ({index}) => {
         {winningText}
       </div>
       <div className="buttons">
-        <Link style={{marginTop: "100px"}} className="linky-button" to={`/map1`}>Back to the map</Link>
+        <Link style={{marginTop: "100px"}} className="linky-button" to={`/map`}>Back to the map</Link>
       </div>
     </div>
 
