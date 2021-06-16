@@ -1,29 +1,30 @@
-import parkData from '../data/skateboard-parks.json'
-import './style.css'
+import placeData from '../data/places.json'
 
-const Questions = () => {
+const Questions = ({index}) => {
 
     // const index = Math.floor(Math.random() * parkData.length)
 
     return (
         <div className="questions">
             <p className="question">
-                {parkData.cities[0].question}
+                {placeData.cities[index].question}
             </p>
             <ul>
                 {
-                    parkData.cities[0].options.map((option, index)=>{
+                    placeData.cities[0].options.map((option, index)=>{
                         const checkAnswer = () => {
-                            let chosenAnswer = parkData.cities[index].options[index]
-                            if (chosenAnswer === parkData.cities[index].options[0]) {
-                                alert("Correct answer! :)  Please continue.")
+                            let chosenAnswer = placeData.cities[index].options[index]
+                            if (chosenAnswer === placeData.cities[index].options[0]) {
+                                if (window.confirm("Correct answer! :)  Please continue.")) {
+                                    window.location.href=`/map${index +1}`
+                                }
                             }
-                            else if (chosenAnswer === parkData.cities[index].options[1]) {
+                            else if (chosenAnswer === placeData.cities[index].options[1]) {
                                 if (window.confirm("Incorrect answer! :(  Click to proceed.")) {
                                     window.location.href='/game1'
                                 }
                             }
-                            if (chosenAnswer === parkData.cities[index].options[2]) {
+                            if (chosenAnswer === placeData.cities[index].options[2]) {
                                 if (window.confirm("Incorrect answer! :(  Click to proceed.")) {
                                     window.location.href='/game2'
                                 }

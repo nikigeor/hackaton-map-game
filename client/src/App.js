@@ -12,8 +12,11 @@ function App() {
     <div>
       <Router>
         <Switch>
-          <Route path="/map">
-            <Map />
+          <Route path="/map0">
+            <Map  coordinates= {[51.044270, -114.062019]} index= {0}/>
+          </Route>
+          <Route path="/map1">
+            <Map  coordinates= {[53.522778, -113.623055]} index= {1}/>
           </Route>
           <Route path="/game1">
             <GameOne />
