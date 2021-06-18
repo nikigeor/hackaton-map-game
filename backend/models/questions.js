@@ -12,14 +12,14 @@ const questionSchema = new Schema(
       type: String,
       required: true,
     },
-    options: [{
-      type: String,
+    options: {
+      type: Array,
       required: true,
-    }],
-    coordinates: [{
-      type: Number,
+    },
+    coordinates: {
+      type: Array,
       required: true,
-    }],
+    },
   },
   
 );

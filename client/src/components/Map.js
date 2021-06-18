@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from "react-leaflet";
 import { Icon } from "leaflet";
-import * as placeData from "../data/places.json";
+//import * as placeData from "../data/places.json";
 import 'leaflet/dist/leaflet.css';
 import Questions from './Questions'
 import { Link } from "react-router-dom"
@@ -12,7 +12,6 @@ const icon = new Icon ({
 })
 
 function LocationMarker({location}) {
-  const [positions, setPositions] = useState(null)
   const map = useMapEvents({
     click(e) {
       map.flyTo(e.latlng, map.getZoom())
@@ -29,16 +28,18 @@ function LocationMarker({location}) {
 const Map = () => {
   const [coordinates, setCoordinates] = React.useState([51.025, -114.1]);
   const [location, setLocation] = React.useState()
+  const [locationData, setLocationData]=useState([])
 
 
-  // useEffect(()=>{
-  //   const getPlacesDetail = async () =>{
-  //     let response = await fetch('/questions')
-  //     let data = await response.json
-  //     console.log("data:",data)
-  //   }
-  //   getPlacesDetail()
-  // }, [])
+  useEffect(()=>{
+    const getPlacesDetail = async () =>{
+      let response = await fetch('/questions')
+      let data = await response.json()
+      console.log("data:",data)
+      setLocationData(data)
+    }
+    getPlacesDetail()
+  }, [])
 
   return ( 
     <div>
@@ -49,19 +50,18 @@ const Map = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-
-        {placeData.cities.map((city, index) => (
+         {locationData.map((city, index) => (
           <Marker
-            key={city.city_ID}
+            key={city._ID}
             position={[
               city.coordinates[1],
               city.coordinates[0]
             ]}
             icon={icon}
             >
-            <Popup>{city.city_name}<Questions city={city} nextCity={placeData.cities[index+1]} setLocation={setLocation}/></Popup>
+            <Popup>{city.city_name}<Questions city={city} nextCity={locationData[index+1]} setLocation={setLocation}/></Popup>
           </Marker>
-        ))}
+          ))}
         <LocationMarker location={location}/>
       </MapContainer>
       <div className="buttons">

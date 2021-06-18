@@ -2,12 +2,12 @@
   "_id": {
     "$oid": "60c75d704a2b1190ec0d80e3"
   },
-  "city_name": "Calgary Tower",
-  "question": "What city is this?",
+  "city_name": "Calgary",
+  "question": "Which two rivers flow through Calgary?",
   "options": [
-    "Calgary",
-    "New York",
-    "Edmonton"
+    "Bow and Elbow",
+    "Bow and Oldman",
+    "Bow and North Saskatchewan"
   ],
   "coordinates": [
     -114,
@@ -17,12 +17,12 @@
   "_id": {
     "$oid": "60c760384a2b1190ec0d80e4"
   },
-  "city_name": "West Edmonton Mall",
-  "question": "What's the biggest mall in the city?",
+  "city_name": "Edmonton",
+  "question": "What Quebec city is Edmonton's sister city?",
   "options": [
-    "Cross Iron Mills",
-    "West Edmonton Mall",
-    "Chinook Mall"
+    "Gatineau",
+    "Montreal",
+    "Victoriaville"
   ],
   "coordinates": [
     -113,
@@ -32,17 +32,45 @@
   "_id": {
     "$oid": "60c7618c4a2b1190ec0d80e5"
   },
-  "city_name": "Pinto MacBean",
-  "question": "What kind of bean is this?",
+  "city_name": "Bow Island",
+  "question": "One of the largest roadside attractions in this town:",
   "options": [
-    "Pinto",
-    "Fava",
-    "Kidney"
+    "Highway 63",
+    "Highway 2",
+    "Secondary Highway 881"
   ],
   "coordinates": [
     -111,
-    {
-      "$numberDecimal": "49.867"
-    }
+    49
+  ]
+},{
+  "_id": {
+    "$oid": "60cbefe8c3f17d7e37331da7"
+  },
+  "city_name": "Bratislava",
+  "question": "Which two countries border Bratislava?",
+  "options": [
+    "Austria and Hungary",
+    "Hungary and Slovania",
+    "Austria and Poland"
+  ],
+  "coordinates": [
+    17,
+    48
+  ]
+},{
+  "_id": {
+    "$oid": "60cbf362c3f17d7e37331da8"
+  },
+  "city_name": "Panama",
+  "question": "At the country's narrowest point, only__km separates the Atlantic from the Pacific ocean",
+  "options": [
+    "80",
+    "120",
+    "45"
+  ],
+  "coordinates": [
+    -79,
+    9
   ]
 }]
